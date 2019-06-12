@@ -53,7 +53,6 @@ class DocHandler(SessionHandler):
     @gen.coroutine
     def get(self, *args, **kwargs):
         session = yield self.get_session()
-
         page = server_html_page_for_session(session,
                                             resources=self.application.resources(),
                                             title=session.document.title,
